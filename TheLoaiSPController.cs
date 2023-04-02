@@ -10,11 +10,11 @@ namespace QuanLyKho.Controllers
     public class TheLoaiSPController : Controller
     {
         // GET: TheLoaiSP
-        MyDataDataContext data = new MyDataDataContext("DESKTOP-H0QF57N\\SQLEXPRESS");
+        DataClasses1DataContext data = new DataClasses1DataContext("KISURAAAA\\KIRAAAA");
         public ActionResult Index()
         {
             var all_theloai = from tt in data.TheLoaiSPs select tt;
-            return View();
+            return View(all_theloai);
         }
 
         public ActionResult Detail(int id)

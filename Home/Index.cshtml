@@ -1,0 +1,38 @@
+﻿@model IEnumerable<QuanLyKho.Models.SanPham>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>TRANG CHỦ</h2>
+
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel panel-heading">
+                    <p><strong>Tên Sản Phẩm : @item.tensp </strong></p>
+                </div>
+                <div class="panel-body">
+                    <p><strong>Loại Sản Phẩm: </strong>@item.TheLoaiSP.tenloaisp</p>
+                    <p><strong>Giá: </strong>@item.giaban VND</p>
+                    <p><strong>Cập Nhật: </strong>@item.ngaycapnhat</p>
+                    <p><strong>Số Lượng Tồn: </strong>@item.soluongton</p>
+                    <p><img src="@item.hinh" alt="hinh thumnail" width="120px" height="170px"></p>
+                </div>
+
+                <h1></h1>
+
+                <div class="panel-footer clearfix">
+                    <div class="pull-right">
+                        <a href="#" class="btn btn-primary">Đặt Mua</a>
+                        @Html.ActionLink("Xem...", "Detail", "SanPham", new { id = item.masp }, new { @class = "btn btn-success" })
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
